@@ -10,7 +10,7 @@ export CCACHE_DIR=~/.ccache.dna-kernel
 
 # -----------------------
 
-. crpalmer-build-config
+. kerneltools-build-config
 
 TOOLS_DIR=`dirname "$0"`
 MAKE=$TOOLS_DIR/make-common.sh
