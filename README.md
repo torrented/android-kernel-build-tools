@@ -26,7 +26,7 @@ VERSION=
 
 
 
-The file is "kernel-build-config".  
+The file is "kerneltools-build-config".  
 In the LOCAL_BUILD_DIR you must have the following files:
 
 initrd.img
