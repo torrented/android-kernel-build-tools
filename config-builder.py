@@ -70,7 +70,6 @@ def devicespec():
                   'EOF`')
     outfile.close()
     sys.exit
-    x = os.path.dirname(os.path.realpath(__file__)) + '/' + nf
     commands.getstatusoutput('mv ' + nf + ' ~/' + b)
     print '\nSaving FILE to: ' + '~/' + b + '/' + nf + '\n'
 
@@ -80,3 +79,4 @@ def main():
 
 if __name__ == '__main__':
   main()
+  exit()
