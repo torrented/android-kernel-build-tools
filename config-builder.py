@@ -50,28 +50,28 @@ def devicespec():
     print '\nSaving FILE as: kerneltools-build-config'
     nf = 'kerneltools-build-config'
     outfile = open(nf, 'w')
-    outfile.write('CROSS_COMPILE=~/' + a)
-    outfile.write('\nHOST_CC=gcc')
-    outfile.write('\nLOCAL_BUILD_DIR=~/' + b)
-    outfile.write('\nTARGET_DIR=~/' + c)
-    outfile.write('\nSYSTEM_PARTITION=\"/dev/block/mmcblk0p' + d + '\"')
-    outfile.write('\nDEFCONFIG=' + e)
-    outfile.write("\n\nFLASH_BOOT='write_raw_image(\"/tmp/boot.img\", \"boot\")'")
-    outfile.write('\n\n# ----')
-    outfile.write('\n\nN_CORES=' + f)
-    outfile.write('\nVERSION=' + g)
-    outfile.write('\n\n# ----\n\n')
-    outfile.write('BANNER=`cat <<EOF\n')
-    outfile.write('ui_print("**********************************************");\n')
-    outfile.write('ui_print("*                                            *");\n')
-    outfile.write('ui_print("  VERSION: ' + g + '                     ");\n')
-    outfile.write('ui_print("*                                            *");\n')
-    outfile.write('ui_print("**********************************************");\n')
-    outfile.write('EOF`')
+    outfile.write('CROSS_COMPILE=~/' + a +
+                  '\nHOST_CC=gcc' +
+                  '\nLOCAL_BUILD_DIR=~/' + b +
+                  '\nTARGET_DIR=~/' + c +
+                  '\nSYSTEM_PARTITION=\"/dev/block/mmcblk0p' + d + '\"' +
+                  '\nDEFCONFIG=' + e +
+                  "\n\nFLASH_BOOT='write_raw_image(\"/tmp/boot.img\", \"boot\")'" +
+                  '\n\n# ----' +
+                  '\n\nN_CORES=' + f +
+                  '\nVERSION=' + g +
+                  '\n\n# ----\n\n' +
+                  'BANNER=`cat <<EOF\n' +
+                  'ui_print("**********************************************");\n' +
+                  'ui_print("*                                            *");\n' +
+                  'ui_print("  VERSION: ' + g + '                     ");\n' +
+                  'ui_print("*                                            *");\n' +
+                  'ui_print("**********************************************");\n' +
+                  'EOF`')
     outfile.close()
     sys.exit
     x = os.path.dirname(os.path.realpath(__file__)) + '/' + nf
-    commands.getstatusoutput('cp ' + nf + ' ~/' + b)
+    commands.getstatusoutput('mv ' + nf + ' ~/' + b)
     print '\nSaving FILE to: ' + '~/' + b + '/' + nf + '\n'
 
 
