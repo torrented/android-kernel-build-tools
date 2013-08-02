@@ -10,15 +10,12 @@ import os
 
 def devicespec():
   a = raw_input('\nCROSS_COMPILE=~')
-  print 'HOST_CC=gcc'
   b = raw_input('LOCAL_BUILD_DIR=~')
   c = raw_input('TARGET_DIR=~')
   d = raw_input('SYSTEM_PARTITION=/dev/block/mmcblk0p')
   e = raw_input('DEFCONFIG=')
-  print "\nFLASH_BOOT='write_raw_image(\"/tmp/boot.img\", \"boot\")'\n"
   f = raw_input('N_CORES=')
   g = raw_input('VERSION=')
-
 # Print Device Spec's
 
   print '\n=====================================\n'
@@ -28,9 +25,11 @@ def devicespec():
   print 'TARGET_DIR=~' + c
   print 'SYSTEM_PARTITION=\"/dev/block/mmcblk0p' + d + '\"'
   print 'DEFCONFIG=' + e
-  print "FLASH_BOOT='write_raw_image(\"/tmp/boot.img\", \"boot\")'"
+  print "\nFLASH_BOOT='write_raw_image(\"/tmp/boot.img\", \"boot\")'"
+  print '\n# ----\n'
   print 'N_CORES=' + f
   print 'VERSION=' + g
+  print '\n# ----'
   print '\n=====================================\n'
 
 # Generate kerneltools-build-config
@@ -71,7 +70,7 @@ def devicespec():
 
 def main():
   devicespec()
-  print '\nREMEMBER TO MOVE THIS FILE TO THE TOP DIR OF YOUR KERNEL SOURCE!\n'
+  print 'REMEMBER TO MOVE THIS FILE TO THE TOP DIR OF YOUR KERNEL SOURCE!\n'
 
 if __name__ == '__main__':
   main()
