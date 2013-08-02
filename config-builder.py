@@ -5,6 +5,7 @@
 import fileinput
 import sys
 import os
+import commands
 
 # Getting Device Spec's
 
@@ -16,6 +17,7 @@ def devicespec():
   e = raw_input('DEFCONFIG=')
   f = raw_input('N_CORES=')
   g = raw_input('VERSION=')
+
 # Print Device Spec's
 
   print '\n=====================================\n'
@@ -42,21 +44,11 @@ def devicespec():
 # Generate kerneltools-build-config
   
   answer1 = raw_input('\nDoes this Look Correct? y or n? ')
-
   if answer1 == 'n':
     main()
   else:
-
-    print '\nDefault filename: kerneltools-build-config'
-   
-    answer2 = raw_input('\nUse default name? y or n? ')
-
-    if answer2 == 'n':
-       nf = raw_input('\nSet File name to: ')
-    else:
-       print '\nSaving FILE as: kerneltools-build-config'
-       nf = 'kerneltools-build-config'
-  
+    print '\nSaving FILE as: kerneltools-build-config'
+    nf = 'kerneltools-build-config'
     outfile = open(nf, 'w')
     outfile.write('CROSS_COMPILE=~/' + a)
     outfile.write('\nHOST_CC=gcc')
@@ -78,13 +70,13 @@ def devicespec():
     outfile.write('EOF`')
     outfile.close()
     sys.exit
-
     x = os.path.dirname(os.path.realpath(__file__)) + '/' + nf
-    print '\nSaving FILE to: ' + x + '\n'
+    commands.getstatusoutput('cp ' + nf + ' ~/' + b)
+    print '\nSaving FILE to: ' + '~/' + b + '/' + nf + '\n'
+
 
 def main():
   devicespec()
-  print 'REMEMBER TO MOVE THIS FILE TO THE TOP DIR OF YOUR KERNEL SOURCE!\n'
 
 if __name__ == '__main__':
   main()

@@ -4,7 +4,7 @@ android-kernel-build-tools
 To build your kernel you need to have a file in the top level
 directory that contains the following configuration variables
 (with the defaults that I use to build my dna kernel as an
-example):
+example) Use the config-builder.py script to help create the file:
 
 CROSS_COMPILE=~/path/to/toolchain/linaro-4.x.x/bin/arm-eabi-
 
@@ -25,8 +25,17 @@ N_CORES=4
 VERSION=
 
 
+The file is named "kerneltools-build-config"
 
-The file is "kerneltools-build-config".  
+To use the "config-builder.py" Script
+
+Change dir to the build tools and run: 
+
+"chmod a+x config-builder.py"
+
+"./config-builder.py"
+
+
 In the LOCAL_BUILD_DIR you must have the following files:
 
 initrd.img
