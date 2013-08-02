@@ -71,6 +71,7 @@ def devicespec():
 
 def main():
   devicespec()
+  print '\nREMEMBER TO MOVE THIS FILE TO THE TOP DIR OF YOUR KERNEL SOURCE!\n'
 
 if __name__ == '__main__':
   main()
