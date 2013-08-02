@@ -59,8 +59,10 @@ def devicespec():
     outfile.write('\nSYSTEM_PARTITION=\"/dev/block/mmcblk0p' + d + '\"')
     outfile.write('\nDEFCONFIG=' + e)
     outfile.write("\n\nFLASH_BOOT='write_raw_image(\"/tmp/boot.img\", \"boot\")'")
+    outfile.write('\n\n# ----')
     outfile.write('\n\nN_CORES=' + f)
     outfile.write('\nVERSION=' + g)
+    outfile.write('\n\n# ----')
     outfile.close()
     sys.exit
 
