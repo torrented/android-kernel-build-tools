@@ -43,11 +43,10 @@ def devicespec():
 
 # Generate kerneltools-build-config
   
-  answer1 = raw_input('\nDoes this Look Correct? y or n? ')
+  answer1 = raw_input('\nDoes this Look Correct? Y or N? ')
   if answer1 == 'n':
     main()
   else:
-    print '\nSaving FILE as: kerneltools-build-config'
     nf = 'kerneltools-build-config'
     outfile = open(nf, 'w')
     outfile.write('CROSS_COMPILE=~/' + a +
@@ -69,14 +68,12 @@ def devicespec():
                   'ui_print("**********************************************");\n' +
                   'EOF`')
     outfile.close()
-    sys.exit
     commands.getstatusoutput('mv ' + nf + ' ~/' + b)
-    print '\nSaving FILE to: ' + '~/' + b + '/' + nf + '\n'
-
+    print '\nSaved config file to: ' + '~/' + b + '/' + nf + '\n'
 
 def main():
   devicespec()
+  exit()
 
 if __name__ == '__main__':
   main()
-  exit()
