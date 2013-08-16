@@ -1,13 +1,13 @@
 #! /usr/bin/python
 
-# This will generate the 'Kerneltools-build-config' needed by the Builder
+# This will generate the kerneltools-build-config needed by the Builder
 
 import fileinput
 import sys
 import os
 import commands
 
-# Getting Device Spec's
+# Getting the Device Spec's
 
 def devicespec():
   a = raw_input('\nCROSS_COMPILE=~/')
@@ -18,7 +18,7 @@ def devicespec():
   f = raw_input('N_CORES=')
   g = raw_input('VERSION=')
 
-# Print Device Spec's
+# Print the Device Spec's
 
   print '\n=====================================\n'
   print 'CROSS_COMPILE=~/' + a
@@ -41,7 +41,7 @@ def devicespec():
   print'EOF`'
   print '\n=====================================\n'
 
-# Generate kerneltools-build-config
+# Generate kerneltools-build-config file
   
   answer1 = raw_input('\nDoes this Look Correct? Y or N? ')
   if answer1 == 'n':
