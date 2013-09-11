@@ -32,13 +32,13 @@ def devicespec():
   print 'N_CORES=' + f
   print 'VERSION=' + g
   print '\n# ----\n\n'
-  print'BANNER=`cat <<EOF'
-  print'ui_print("**********************************************");'
-  print'ui_print("*                                            *");'
-  print'ui_print("  VERSION: ' + g + '                     ");'
-  print'ui_print("*                                            *");'
-  print'ui_print("**********************************************");'
-  print'EOF`'
+  print 'BANNER=`cat <<EOF'
+  print 'ui_print("**********************************************");'
+  print 'ui_print("*                                            *");'
+  print 'ui_print("  VERSION: ' + g + '                     ");'
+  print 'ui_print("*                                            *");'
+  print 'ui_print("**********************************************");'
+  print 'EOF`'
   print '\n=====================================\n'
 
 # Generate kerneltools-build-config file
