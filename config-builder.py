@@ -64,7 +64,7 @@ def devicespec():
                   'BANNER=`cat <<EOF\n' +
                   'ui_print("**********************************************");\n' +
                   'ui_print("*                                            *");\n' +
-                  'ui_print("  VERSION: ' + version + '                    ");\n' +
+                  "ui_print("  'VERSION: $VERSION                         '");\n" +
                   'ui_print("*                                            *");\n' +
                   'ui_print("**********************************************");\n' +
                   'EOF`')
